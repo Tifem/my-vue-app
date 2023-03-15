@@ -1,14 +1,16 @@
 <template>
    <div class="container">
+      <h2 class="mt-4">List Of All Repositories</h2>
       <div class="table-container mt-5">
-          <table class="table is-bordered is-striped is-hoverable is-fullwidth">
-            <thead class="thead-dark">
+          <table class="table table-striped table-bordered table-hover is-fullwidth">
+            <thead class="bg-primary text-white">
             <tr>
               <th>ID</th>
               <th>Name</th>
               <th>Description</th>
-              <th>Date Created</th>
               <th>URL</th>
+              <th>Language</th>
+              <th>Date Created</th>
             </tr>
             </thead>
             <tbody>
@@ -16,15 +18,16 @@
             <td>{{repo.id}}</td>
             <td>{{repo.name}}</td>
             <td>{{repo.description}}</td>
-            <td>{{repo.created_at}}</td>
             <td><a :href="repo.html_url" target="_blank">Github</a></td>
+            <td>{{repo.language}}</td>
+            <td>{{repo.created_at}}</td>
             </tr>
             </tbody>
           </table>
-        <div class='pagination'>
-          <button>Prev </button>
-          <button v-for="num of pages" @click="paginate(num)"> {{num}}</button>
-          <button>Next</button>
+        <div class='pagination mr-2'>
+          <button @click="prevHandler()" type="button" class="btn btn-primary mr-3">Prev </button>
+          <button v-for="num of pages" @click="paginate(num)" type="button" class="btn btn-primary"> {{num}}</button>
+          <button @click="nextHandler()" type="button" class="btn btn-primary">Next</button>
         </div>
       </div>
    </div>
@@ -38,22 +41,41 @@ export default {
       return {
         repos: null,
         pageNum: 1,
-        pages: [1,2,3,4]
+        
       };
   },
+  computed:{
+    pages: function(){
+      return [this.pageNum, this.pageNum +1, this.pageNum+2, this.pageNum+3]
+    }
+  },
   mounted(){
-    fetchRepo()
+    this.fetchRepo()
   },
   methods: {
     fetchRepo() {
     axios.get(`https://api.github.com/users/Tifem/repos?page=${this.pageNum}&per_page=10`).then((response) => {
+      if(response.data.length == 0){
+        this.pageNum = this.pageNum -1
+        this.fetchRepo()
+      }
       this.repos = response.data;
+      console.log(response.data)
     })
   },
     paginate(num){
       this.pageNum = num
+      this.fetchRepo()
       console.log(this.pageNum)
     },
+    nextHandler(){
+      this.pageNum = this.pageNum + 1
+      this.fetchRepo()
+    },
+    prevHandler(){
+      this.pageNum = this.pageNum - 1
+      this.fetchRepo()
+    }
 },
 }
 
