@@ -11,6 +11,7 @@
               <th>URL</th>
               <th>Language</th>
               <th>Date Created</th>
+              <th>View More</th>
             </tr>
             </thead>
             <tbody>
@@ -21,6 +22,7 @@
             <td><a :href="repo.html_url" target="_blank">Github</a></td>
             <td>{{repo.language}}</td>
             <td>{{repo.created_at}}</td>
+            <td><button>View</button></td>
             </tr>
             </tbody>
           </table>
