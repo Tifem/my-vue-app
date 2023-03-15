@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-5" style="height: ">
+  <div class="container my-5">
     <div class="row">
       <div class="col-md-7">
       <img alt="" src="../assets/github.jpg" class="rounded" style="width: 400px;"/>

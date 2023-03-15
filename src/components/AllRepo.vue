@@ -1,76 +1,67 @@
 <template>
-  <div className="App container my-5">
-        <h1 className="mb-3">List of all Repositories</h1>
-
-        <div className="row">
-          
-              <div className="col-md-4 mb-3">
-                <div className="card">
-                  <div className="card-body">
-                    <h4 className="card-title">{each.name}</h4>
-                    <p className="card-text">{each.description}</p>
-                    <Link
-                      to=""
-                      className="card-link btn btn-dark"
-                    >
-                      More
-                    </Link>
-                    <a href={each.html_url} className="card-link btn btn-primary">
-                      View on Git
-                    </a>
-                  </div>
-                </div>
-              </div>
-           
-        </div>
-
-        <div className="mt-5 d-flex justify-content-between">
-          <button
-            className="btn btn-primary"
-            type="button"
-            disabled=""
-            aria-disabled=""
-            onClick=""
-          >
-            <i className="bi-skip-backward-fill"></i>
-          </button>
-
-          <p>
-            {page} of {pages}
-          </p>
-
-          <button
-            className="btn btn-primary"
-            type="button"
-            disabled=""
-            aria-disabled=""
-            onClick=""
-          >
-            <i className="bi-skip-forward-fill"></i>
-          </button>
-        </div>
-
-        <div className="mt-3 text-center">
-            <button
-              className="btn btn-dark mr-2"
-              onClick=""
-            >
-              
-            </button>
-        
+   <div class="container">
+      <div class="table-container mt-5">
+          <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+            <thead class="thead-dark">
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Date Created</th>
+              <th>URL</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="repo in repos" :key="repo.id">
+            <td>{{repo.id}}</td>
+            <td>{{repo.name}}</td>
+            <td>{{repo.description}}</td>
+            <td>{{repo.created_at}}</td>
+            <td><a :href="repo.html_url" target="_blank">Github</a></td>
+            </tr>
+            </tbody>
+          </table>
+        <div class='pagination'>
+          <button>Prev </button>
+          <button v-for="num of pages" @click="paginate(num)"> {{num}}</button>
+          <button>Next</button>
         </div>
       </div>
+   </div>
 </template>
 
 <script>
+  import axios from "axios";
 export default {
   name: 'All Repo',
-  
+  data() {
+      return {
+        repos: null,
+        pageNum: 1,
+        pages: [1,2,3,4]
+      };
+  },
+  mounted(){
+    fetchRepo()
+  },
+  methods: {
+    fetchRepo() {
+    axios.get(`https://api.github.com/users/Tifem/repos?page=${this.pageNum}&per_page=10`).then((response) => {
+      this.repos = response.data;
+    })
+  },
+    paginate(num){
+      this.pageNum = num
+      console.log(this.pageNum)
+    },
+},
 }
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
- 
+  .table-container{
+    margin-bottom: 100px;
+  }
 </style>
