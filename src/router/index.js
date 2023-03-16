@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from '../components/Home.vue';
 import AllRepo from '../components/AllRepo.vue';
 import MyProfile from '../components/MyProfile.vue';
+import PageNotFound from '../components/PageNotFound.vue';
 
 const routes = [
     {
@@ -20,6 +21,11 @@ const routes = [
         path: '/repos/:id',
         name: 'single-repo',
         component: () => import("../components/SingleRepo.vue")
+    },
+    {
+        path: '/:catchAll(.*)',
+        name: 'PageNotFound',
+        component: PageNotFound,
     }
 ];
 

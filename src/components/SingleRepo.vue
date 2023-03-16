@@ -10,11 +10,11 @@
       <ul className="list-group list-group-flush">
         <li className="list-group-item">Owned by :{{ repo.owner.login }}</li>
         <li className="list-group-item">fork :{{ repo.forks }}</li>
+        <li className="list-group-item">Language :{{ repo.language }}</li>
         <li className="list-group-item">Created at : {{ repo.created_at }}</li>
         <li className="list-group-item">Updated at :{{ repo.updated_at }}</li>
         <li className="list-group-item">Pushed at : {{ repo.pushed_at }}</li>
         <li className="list-group-item">Visiblity :{{ repo.visibility }}</li>
-        <li className="list-group-item">Watchstoreers : {{ repo.watchers }}</li>
         <li className="list-group-item">
           Default branch :{{ repo.default_branch }}
         </li>
@@ -22,7 +22,7 @@
     </div>
 
     <router-link to="/all-repo">
-      <button type="button" class="btn btn-dark rounded">Back</button>
+      <button type="button" class="btn btn-primary rounded mt-3">Back</button>
     </router-link>
   </div>
 </template>
