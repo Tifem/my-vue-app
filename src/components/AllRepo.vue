@@ -22,7 +22,14 @@
             <td><a :href="repo.html_url" target="_blank">Github</a></td>
             <td>{{repo.language}}</td>
             <td>{{repo.created_at}}</td>
-            <td><button>View</button></td>
+            <td>
+            <router-link :to="{
+              name: 'single-repo',
+              params: {id : `${repo.id}`}
+            }">
+            <button type="button" class="btn btn-dark rounded" @click="selectRepo(repo)">View</button>
+            </router-link>
+            </td>
             </tr>
             </tbody>
           </table>
@@ -37,6 +44,7 @@
 
 <script>
   import axios from "axios";
+  import store from "../store/Store"
 export default {
   name: 'All Repo',
   data() {
@@ -77,6 +85,9 @@ export default {
     prevHandler(){
       this.pageNum = this.pageNum - 1
       this.fetchRepo()
+    },
+    selectRepo(repo){
+      store.commit('SET_REPO', repo)
     }
 },
 }

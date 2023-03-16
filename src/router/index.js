@@ -16,6 +16,11 @@ const routes = [
         path: '/my-profile',
         component: MyProfile,
     },
+    {
+        path: '/repos/:id',
+        name: 'single-repo',
+        component: () => import("../components/SingleRepo.vue")
+    }
 ];
 
 
