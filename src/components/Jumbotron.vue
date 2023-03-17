@@ -1,8 +1,8 @@
 <template>
-  <div class="container my-5">
+  <div class="container mb-3">
     <div class="row">
       <div class="col-md-7">
-      <img alt="" src="../assets/github.jpg" class="rounded" style="width: 400px;"/>
+      <img alt="" src="../assets/github.jpg" class="rounded" style="width: 350px;"/>
       </div>
       <div class="col-md-5">
         <h1>Github Repositories</h1>
@@ -10,6 +10,36 @@
       </div>
     </div>
   </div>
+
+  <div className="row mt-3">
+              <div className="col-md-4 mb-3">
+                <div className="card">
+                  <div className="card-body">
+                    <h4 className="card-title">Vue Js</h4>
+                    <p className="card-text"></p>
+                         <img alt="" src="../assets/vue.svg" class="rounded" style="width: 130px;"/>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4 mb-3">
+                <div className="card">
+                  <div className="card-body">
+                    <h4 className="card-title">GitHub API</h4>
+                    <p className="card-text"></p>
+                         <img alt="" src="../assets/git.png" class="rounded" style="width: 130px;"/>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4 mb-3">
+                <div className="card">
+                  <div className="card-body">
+                    <h4 className="card-title">Vue Router</h4>
+                    <p className="card-text"></p>
+                         <img alt="" src="../assets/vue router.png" class="rounded" style="width: 130px;"/>
+                  </div>
+                </div>
+              </div>      
+        </div>
 </template>
 
 <script>
