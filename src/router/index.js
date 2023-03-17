@@ -13,10 +13,10 @@ const routes = [
         path: '/all-repo',
         component: AllRepo,
     },
-    {
-        path: '/my-profile',
-        component: MyProfile,
-    },
+    // {
+    //     path: '/my-profile',
+    //     component: MyProfile,
+    // },
     {
         path: '/repos/:id',
         name: 'single-repo',
