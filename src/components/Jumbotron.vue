@@ -37,7 +37,7 @@
                   <div className="card-body">
                     <h4 className="card-title">Vue Router</h4>
                     <p className="card-text"></p>
-                         <img alt="" src="../assets/vue router.png" class="rounded" style="width: 130px;"/>
+                         <img alt="" src="../assets/router.png" class="rounded" style="width: 130px;"/>
                   </div>
                 </div>
               </div>      
