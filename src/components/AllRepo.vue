@@ -2,7 +2,7 @@
    <div class="container">
       <h2 class="mt-4">List Of All Repositories</h2>
       <div class="table-container mt-5">
-          <table class="table table-striped table-bordered table-hover is-fullwidth">
+          <table class="table table-striped table-bordered table-hover table-responsive is-fullwidth">
             <thead class="bg-primary text-white">
             <tr>
               <th>ID</th>
