@@ -2,10 +2,10 @@
   <div class="container mb-3">
     <div class="row">
       <div class="col-md-7">
-      <img alt="" src="../assets/github.jpg" class="rounded" style="width: 350px;"/>
+      <img alt="" src="../assets/github.jpg" class="rounded" style="width: 320px;"/>
       </div>
-      <div class="col-md-5">
-        <h1>Github Repositories</h1>
+      <div class="col-md-5 mt-3">
+        <h1 class="text-dark">Github Repositories</h1>
         <p>This project is a Vue application that fetches user's repo from Github, showing the list of all Github repositories 
             and also a page which shows a single repository.
         </p>
@@ -17,7 +17,7 @@
               <div className="col-md-4 mb-3">
                 <div className="card">
                   <div className="card-body">
-                    <h4 className="card-title">Vue Js</h4>
+                    <h4 className="card-title text-dark">Vue Js</h4>
                     <p className="card-text"></p>
                          <img alt="" src="../assets/vue.svg" class="rounded" style="width: 130px;"/>
                   </div>
@@ -26,7 +26,7 @@
               <div className="col-md-4 mb-3">
                 <div className="card">
                   <div className="card-body">
-                    <h4 className="card-title">GitHub API</h4>
+                    <h4 className="card-title text-dark">GitHub API</h4>
                     <p className="card-text"></p>
                          <img alt="" src="../assets/git.png" class="rounded" style="width: 130px;"/>
                   </div>
@@ -35,7 +35,7 @@
               <div className="col-md-4 mb-3">
                 <div className="card">
                   <div className="card-body">
-                    <h4 className="card-title">Vue Router</h4>
+                    <h4 className="card-title text-dark">Vue Router</h4>
                     <p className="card-text"></p>
                          <img alt="" src="../assets/router.png" class="rounded" style="width: 130px;"/>
                   </div>
