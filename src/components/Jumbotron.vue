@@ -6,7 +6,9 @@
       </div>
       <div class="col-md-5">
         <h1>Github Repositories</h1>
-        <p>This project is a Vue application that fetches user's repo from Github, showing the list of all Github repositories</p>
+        <p>This project is a Vue application that fetches user's repo from Github, showing the list of all Github repositories 
+            and also a page which shows a single repository.
+        </p>
       </div>
     </div>
   </div>
